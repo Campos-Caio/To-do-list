@@ -1,0 +1,183 @@
+:root{
+    --color-dark: rgb(14, 14, 14);
+    --color-dark2: rgb(32, 32, 32);
+    --color-dark3: rgb(22, 22, 22);
+    --color-white: #fff;
+    --color-green: rgb(103, 195, 80);
+    --color-green2: rgb(51, 149, 26);
+    --color-red: rgb(184, 40, 35);
+    --color-red2: rgb(146, 22, 17);
+    --color-purple: #6a0dad;
+    --color-purple2: #7b1fa2;
+    --color-completed: rgba(103, 195, 80, 0.3);
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-purple);
+    margin: 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    background-color: var(--color-dark2);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.content--add-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#input-new-task,
+#btn-new-task{
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    padding: 0.75rem 1rem;
+}
+
+#input-new-task{
+    flex-grow: 1;
+    border-radius: 0.5rem;
+    background-color: var(--color-dark3);
+    color: var(--color-white);
+    transition: border 0.3s ease;
+}
+
+#input-new-task:focus {
+    border: 1px solid var(--color-purple);
+}
+
+#btn-new-task{
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-new-task:hover{
+    background-color: var(--color-purple2);
+}
+
+#to-do-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+#to-do-list li{
+    list-style-type: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-dark3);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+#to-do-list li.completed {
+    background-color: var(--color-completed);
+    text-decoration: line-through;
+}
+
+#to-do-list li:hover{
+    background-color: var(--color-dark2);
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-edit, .btn-ok, .btn-remove {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.4s;
+}
+
+.btn-edit {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.btn-edit:hover {
+    background-color: var(--color-purple2);
+}
+
+.btn-ok {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.btn-ok:hover{
+    background-color: var(--color-green2);
+}
+
+.btn-remove {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.btn-remove:hover {
+    background-color: var(--color-red2);
+}
+
+.btn-edit svg, .btn-ok svg, .btn-remove svg {
+    width: 24px;
+    height: 24px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    background-color: var(--color-dark2);
+    border-top: 1px solid var(--color-dark3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-white);
+}
