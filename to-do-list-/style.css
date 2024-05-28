@@ -53,7 +53,8 @@ h1 {
 }
 
 #input-new-task,
-#btn-new-task{
+#btn-new-task,
+.color-picker {
     border: none;
     font-size: 1rem;
     outline: none;
@@ -108,6 +109,7 @@ h1 {
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
+    position: relative;
 }
 
 #to-do-list li.completed {
@@ -126,7 +128,8 @@ h1 {
 
 .btn-edit, .btn-ok, .btn-remove {
     border: none;
-    background: none;
+    background: rgba(0, 0, 0, 0.5); /* Semitransparente para visibilidade */
+    color: var(--color-white);
     cursor: pointer;
     padding: 0.5rem;
     display: flex;
@@ -136,27 +139,12 @@ h1 {
     transition: background-color 0.4s;
 }
 
-.btn-edit {
-    background-color: var(--color-purple);
-    color: var(--color-white);
-}
-
 .btn-edit:hover {
     background-color: var(--color-purple2);
 }
 
-.btn-ok {
-    background-color: var(--color-green);
-    color: var(--color-white);
-}
-
-.btn-ok:hover{
+.btn-ok:hover {
     background-color: var(--color-green2);
-}
-
-.btn-remove {
-    background-color: var(--color-red);
-    color: var(--color-white);
 }
 
 .btn-remove:hover {
@@ -181,3 +169,77 @@ footer p {
     font-size: 0.9rem;
     color: var(--color-white);
 }
+
+/* Estilize o input de cor */
+.color-picker {
+    border: none;
+    border-radius: 0.5rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--color-dark3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-picker:hover {
+    background-color: var(--color-dark2);
+    transform: scale(1.1);
+}
+
+.color-picker:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-purple);
+}
+#color-picker-modal {
+    margin-bottom: 10px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  #color-picker-modal:focus {
+    outline: none;
+  }
+  
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+  
